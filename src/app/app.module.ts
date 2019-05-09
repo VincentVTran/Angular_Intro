@@ -7,11 +7,11 @@ import { HelloCompComponent } from './Components/hello-comp/hello-comp.component
 import { TestModule } from './test/test.module';
 
 @NgModule({
-  declarations: [
+  declarations: [ //Components being added into declaration (Allows components to be used in HTML)
     AppComponent,
-    HelloCompComponent,
+    HelloCompComponent,//Imported components inside of modules do not need to be declared
   ],
-  imports: [
+  imports: [ //All modules being imported
     BrowserModule,
     AppRoutingModule,
     TestModule

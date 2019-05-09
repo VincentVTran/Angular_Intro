@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { TestComponent } from './test.component';
 
 @NgModule({
-  declarations: [TestComponent],
+  declarations: [TestComponent], //Allows component to be used in HTML
   imports: [
     CommonModule
   ],
-  exports: [ TestComponent ]
+  exports: [ TestComponent ] //Exporting all components in the array 
 })
 export class TestModule { }

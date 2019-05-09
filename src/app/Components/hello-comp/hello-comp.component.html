@@ -1,3 +1,20 @@
-<p [hidden] = "isVisible">
-  {{customer.name}}
+<p [hidden] = "isVisible"><!--[] uses DOM property, () uses DOM event handling-->
+  {{customer.name}} <!--Grabs customer object from exported component class-->
 </p>
+<table>
+  <tr>
+    <th>Name</th> <!--Heading-->
+    <th>Date</th> 
+    <th>ID</th>
+  </tr>
+  <tr>
+    <td>Test</td> <!--Data-->
+    <td>Test</td>
+    <td>Test</td>
+  </tr>
+  <tr *ngFor="let current of customerList"> <!--Loops for(object current: customerList){}-->
+    <td>{{current.name}}</td>
+    <td>{{current.id}}</td>
+    <td>{{current.date}}</td>
+  </tr>
+</table>
