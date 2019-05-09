@@ -1,13 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {Person} from '../../Interfaces/objectInt';
+import { Component, OnInit } from '@angular/core';
+import {HTTPService} from '../service/HTTP'
+import {Input} from '@angular/core'
 @Component({
-  selector: 'app-hello-comp',
-  templateUrl: './hello-comp.component.html',
-  styleUrls: ['./hello-comp.component.css']
+  selector: 'app-test',
+  templateUrl: './test.component.html',
+  styleUrls: ['./test.component.css']
 })
+export class TestComponent implements OnInit {
 
-
-export class HelloCompComponent implements OnInit {
   customerList:any[] = [{name: "stuff",id: 4,date: 4},{name: "stuff",id: 4,date: 4}]; //customerList = Name, Person type array
   customer = {
     name: "stuff"
@@ -23,9 +23,10 @@ export class HelloCompComponent implements OnInit {
   }
 
   isVisible = true;
-  constructor() { }
+  constructor(private data:HTTPService) { }
 
   ngOnInit() {
+    this.data.getData().subscribe((data:any[]) => this.customerList = data);
   }
   printout(){
     console.log("Hello World");

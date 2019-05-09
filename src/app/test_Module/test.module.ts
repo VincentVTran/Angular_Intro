@@ -5,7 +5,7 @@ import { TestComponent } from './test.component';
 @NgModule({
   declarations: [TestComponent], //Allows component to be used in HTML
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [ TestComponent ] //Exporting all components in the array 
 })
